@@ -92,6 +92,8 @@ def generator(num, start, length):
         word_lines = origin.readlines()
     tmplist = filter(not_emptyLine, word_lines)
     word_lines = list(tmplist)
+    if os.path.exists("data") == False:
+        os.mkdir("data")
 
     start = max(0, start)
     start = min(start, len(word_lines))
